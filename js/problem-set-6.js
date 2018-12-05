@@ -11,7 +11,9 @@
  */
 
 function sayHello() {
-
+    var ctx = document.getElementById('canvas1').getContext('2d');
+    ctx.font = '48px Sans-Serif';
+    ctx.strokeText('Hello, World!', 10, 50);
 }
 
 /*
@@ -38,7 +40,17 @@ function sayHello() {
  */
 
 function drawRectangle() {
+  let rectangle = document.getElementById('canvas2').getContext('2d');
+  let
+let
 
+height= prompt(`Height:`)
+width= prompt(`Width:`)
+x= prompt(`X:`)
+y
+let
+  ctx.fillStyle = 'green';
+  ctx.fillRect(10, 10, 50, 100);
 }
 
 /*
