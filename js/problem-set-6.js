@@ -40,16 +40,24 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let rectangle = document.getElementById('canvas2').getContext('2d');
-  let
-let
+  let rectangle=document.getElementById('canvas2').getContext('2d');
+  let rectX;
+  let rectY;
+  let rectHeight;
+  let rectWidth;
 
-height= prompt(`Height:`)
-width= prompt(`Width:`)
-x= prompt(`X:`)
-y
-let
-  ctx.fillStyle = 'green';
+
+rectX=Number(prompt(`Enter the X value of your rectangle:`));
+rectY=Number(prompt(`Enter the Y value of your rectangle`));
+rectHeight=Number(prompt(`Enter the height of your rectangle:`));
+rectWidth=Number(prompt(`Enter the width of your rectangle:`));
+
+
+  console.log(rectHeight)
+  console.log(rectWidth)
+  console.log(rectX)
+  console.log(rectY)
+
   ctx.fillRect(10, 10, 50, 100);
 }
 
