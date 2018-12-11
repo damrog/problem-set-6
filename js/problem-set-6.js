@@ -40,25 +40,31 @@ function sayHello() {
  */
 
 function drawRectangle() {
-  let rectangle=document.getElementById('canvas2').getContext('2d');
+  let drawRectangle = document.getElementById('canvas2');
+  let context = drawRectangle.getContext('2d');
+  context.clearRect(0, 0, canvas2.width, canvas2.height);
+
   let rectX;
+  do {
+    rectX=Number(prompt(`Enter the X value of your rectangle:`));
+  } while (rectX < 5 || !Number.isInteger(rectX));
+
   let rectY;
+  do {
+    rectY=Number(prompt(`Enter the Y value of your rectangle`));
+  } while (rectY < 5 || !Number.isInteger(rectY));
+
   let rectHeight;
+  do {
+    rectHeight=Number(prompt(`Enter the height of your rectangle:`));
+  } while (rectHeight < 1 || !Number.isInteger(rectHeight));
+
   let rectWidth;
+  do {
+    rectWidth=Number(prompt(`Enter the width of your rectangle:`));
+  } while (rectWidth < 1 || !Number.isInteger(rectWidth));
 
-
-rectX=Number(prompt(`Enter the X value of your rectangle:`));
-rectY=Number(prompt(`Enter the Y value of your rectangle`));
-rectHeight=Number(prompt(`Enter the height of your rectangle:`));
-rectWidth=Number(prompt(`Enter the width of your rectangle:`));
-
-
-  console.log(rectHeight)
-  console.log(rectWidth)
-  console.log(rectX)
-  console.log(rectY)
-
-  ctx.fillRect(10, 10, 50, 100);
+context.strokeRect(rectX,rectY,rectWidth,rectHeight);
 }
 
 /*
