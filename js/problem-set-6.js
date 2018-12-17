@@ -93,7 +93,16 @@ context.strokeRect(rectX,rectY,rectWidth,rectHeight);
  */
 
 function drawColoredRectangle() {
+let drawColoredRectangle = document.getElementById('canvas3').getContext('2d');
+  context.clearRect(0, 0, canvas3.width, canvas3.height);
 
+let userColored = prompt("Please enter the color of your rectangle:")
+let drawEnabled = false;
+
+if (userColored == "black" || userColored == "blue" || userColored == "green" || userColored == "orange" || userColored == "purple" || userColored == "red" || userColored == "yellow") {
+  drawEnabled = true
+} else{ prompt("Please enter the color of your rectangle:")
+}
 }
 
 /*
