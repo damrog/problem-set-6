@@ -307,7 +307,7 @@ function drawStar() {
         ctx.lineTo(insidex[j], insidey[j]);
         ctx.lineTo(outsidex[j+1], outsidey[j+1]);
         
-    }
+    
     
          
         ctx.lineTo(outsidex[0], outsidey[0]);
