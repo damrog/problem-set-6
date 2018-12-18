@@ -12,9 +12,9 @@
 
 function sayHello() {
     
-    let ctx = document.getElementById('canvas1').getContext('2d');
-    ctx.font = '48px Sans-Serif';
-    ctx.strokeText('Hello, World!', 10, 50);
+    let sayHello = document.getElementById('canvas1').getContext('2d');
+    sayHello.font = '48px Sans-Serif';
+    sayHello.strokeText('Hello, World!', 10, 50);
 }
 
 /*
