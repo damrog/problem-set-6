@@ -256,7 +256,8 @@ let mouthRadius = smileRadius * .7
 
 }
 
-
+}
+    
 /*
  * Star. 9 points.
  *
