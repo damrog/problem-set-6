@@ -173,7 +173,7 @@ if(((triangleA ** 2) + (triangleB ** 2) == (triangleC ** 2)) && triangleA > 0 &&
   alert("This is not a real right triangle.");
   break;
     
-}
+
 }
 
 if(Math.pow(triangleA, 2) + Math.pow(triangleB, 2) == Math.pow(triangleC, 2)){
