@@ -11,7 +11,7 @@
  */
 
 function sayHello() {
-    
+
     let sayHello = document.getElementById('canvas1').getContext('2d');
     sayHello.font = '48px Sans-Serif';
     sayHello.strokeText('Hello, World!', 10, 50);
@@ -41,7 +41,7 @@ function sayHello() {
  */
 
 function drawRectangle() {
- 
+
   let drawRectangle = document.getElementById('canvas2');
   let context = drawRectangle.getContext('2d');
   context.clearRect(0, 0, canvas2.width, canvas2.height);
@@ -97,18 +97,18 @@ context.strokeRect(rectX,rectY,rectWidth,rectHeight);
 function drawColoredRectangle() {
 
 let drawColoredRectangle = document.getElementById('canvas3').getContext('2d');
-context.clearRect(0, 0, canvas3.width, canvas3.height);
+drawColoredRectangle.clearRect(0, 0, canvas3.width, canvas3.height);
 
 let userColored;
-let drawEnabled = false;   
+let drawEnabled = false;
 
 userColored = prompt("Please enter the color of your rectangle:")
 
 
 if (userColored == "black" || userColored == "blue" || userColored == "green" || userColored == "orange" || userColored == "purple" || userColored == "red" || userColored == "yellow") {
   drawEnabled = true;
-} 
- else{ 
+}
+ else{
      alert(`${userColored} is not an available color, please input color again:`);
 }
 
@@ -116,7 +116,7 @@ if(drawEnabled == true){
     drawColoredRectangle.fillStyle = userColored;
     drawColoredRectangle.fillRect(10, 10, 100, 50);
 }
-    
+
 }
 
 
@@ -157,7 +157,7 @@ let triangleA = Number(prompt("Enter a positive integer for the left side length
 let triangleB = Number(prompt("Enter a positive integer for the bottom side length of your triangle:"));
 let triangleC = Number(prompt("Enter a positive integer for the hypotenuse of your triangle:"));
 
-let y = 10; 
+let y = 10;
 let x = 10;
 
 triangle.clearRect(0, 0, canvas4.width, canvas4.height);
@@ -165,35 +165,35 @@ triangle.clearRect(0, 0, canvas4.width, canvas4.height);
 while(true){
 if(((triangleA ** 2) + (triangleB ** 2) == (triangleC ** 2)) && triangleA > 0 && triangleB > 0 && triangleC > 0 && canvas.width - x - triangleA >= 0 && canvas.height - y - triangleB >= 0){
   break;
-    
+
 }else{
   alert("This is not a real right triangle.");
   break;
-    
+
 
 }
 
 if(Math.pow(triangleA, 2) + Math.pow(triangleB, 2) == Math.pow(triangleC, 2)){
-    
+
     triangle.beginPath();
     triangle.moveTo(x,y);
     triangle.lineTo(x, y + triangleA);
     triangle.stroke();
 
-    triangle.beginPath();
+
     triangle.moveTo(x,y + triangleA);
     triangle.lineTo(x + triangleB, y + triangleA);
     triangle.stroke();
 
-    triangle.beginPath();
+
     triangle.moveTo(x,y);
     triangle.lineTo(x + triangleB, y + triangleA);
     triangle.stroke();
 }
-    
+
 }
 
-    
+
 /*
  * Smile. 7 points.
  *
@@ -243,7 +243,7 @@ let mouthRadius = smileRadius * .7
     ctx.arc(smileRadius + 10 - smileRadius/3, smileRadius + 10 - smileRadius/4, eyeRadius,0, Math.PI*2);
     ctx.stroke();
 
-    
+
     ctx.beginPath();
     ctx.arc(smileRadius + 10 + smileRadius/3, smileRadius + 10 - smileRadius/4, eyeRadius, 0, Math.PI*2);
     ctx.stroke();
@@ -257,7 +257,7 @@ let mouthRadius = smileRadius * .7
 }
 
 }
-    
+
 /*
  * Star. 9 points.
  *
@@ -280,19 +280,19 @@ function drawStar() {
 
  let canvas = document.getElementById('canvas6');
  let ctx = canvas.getContext('2d');
-    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
  let outsideRadius=Number(prompt("Enter a proper outside radius:"));
  let innerRadius=Number(prompt("Enter a valid inner radius"));
      if (outsideRadius>=innerRadius && canvas.width>=outsideRadius+125 && canvas.height>=outsideRadius+125 && innerRadius>=1 && outsideRadius>=1){
  let points=5;
-         
+}
  let insidex=[];
  let insidey=[];
  let outsidex=[];
  let outsidey=[];
-         
+
 
     for(let i=0;i<points;i++){
       outsidex.push(Math.cos((Math.PI*2*i)/points-(Math.PI/2))*outsideRadius+125);
@@ -302,19 +302,18 @@ function drawStar() {
     }
         ctx.beginPath();
         ctx.moveTo(outsidex[0], outsidey[0]);
-         
+
     for(let j=0;j<outsidex.length;j++){
-      
+
         ctx.lineTo(insidex[j], insidey[j]);
         ctx.lineTo(outsidex[j+1], outsidey[j+1]);
         ctx.lineTo(outsidex[0], outsidey[0]);
         ctx.stroke();
         ctx.closePath();
     }
-    else {
       alert('The inputted values are not valid!');
- }
-    
+
+
  }
 
 
@@ -336,7 +335,7 @@ function drawStar() {
 function drawStopSign() {
  let stopSign = document.getElementById("canvas7").getContext("2d");
   stopSign.clearRect(0, 0, canvas7.height, canvas7.width)
- 
+
   let stoplength = 80;
   let c = Number((80/Math.sqrt(2)).toFixed(0));
   let signX = 70;
@@ -360,7 +359,7 @@ function drawStopSign() {
   stopSign.fillText("STOP", 30, 145);
 }
 
-    
+
 /*
  * Pyramid. 7 points.
  *
@@ -384,12 +383,12 @@ function drawPyramid() {
   let canvas = document.getElementById('canvas8');
   let ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
- 
+
   let sideLength=Number(prompt("enter a side length"));
   let pyramidx=10;
   let pyramidy=canvas.height-10;
   let i=0;
-  
+
   lineNumber=1;
   while(i<5){
     for(let j=0+lineNumber;j<=5;j++){
@@ -402,7 +401,7 @@ function drawPyramid() {
     i++;
   }
 }
-}
+
 
 
 /*
@@ -438,10 +437,10 @@ function drawHouse() {
 
    let houseDraw = document.getElementById("canvas9").getContext("2d");
     houseDraw.clearRect(0,0,canvas9.width, canvas9.height);
-  
+
   let mainColor = prompt("Please input a color for your house:");
   let doorColor = prompt("Please input a color for the door of your house:");
-  
+
     if ((mainColor == "blue" || mainColor == "brown"|| mainColor == "green" || mainColor == "orange" || mainColor == "purple" || mainColor == "red" || mainColor == "yellow") && (doorColor == "blue" || doorColor == "brown"|| doorColor == "green" || doorColor == "orange" || doorColor == "purple" || doorColor == "red" || doorColor == "yellow")){
 
     //This is for the main part of the house
@@ -469,7 +468,7 @@ function drawHouse() {
     houseDraw.fill();
     houseDraw.closePath();
 
-    //This is for the windows of the house 
+    //This is for the windows of the house
     houseDraw.fillStyle="black";
     houseDraw.fillRect(260,620,80,80);
     houseDraw.fillRect(260,400,80,80);
@@ -487,21 +486,7 @@ function drawHouse() {
     houseDraw.fillStyle=doorColor;
     houseDraw.fillRect(462,590,100,160);
 
-    //This is for the doorknob of the house
-    houseDraw.beginPath();
-    houseDraw.arc(545,670,8,0,Math.PI*2,true);
-    houseDraw.fillStyle="black";
-    houseDraw.fill();
-    houseDraw.closePath();
-    houseDraw.beginPath();
-    houseDraw.arc(545,670,7,0,Math.PI*2,true);
-    houseDraw.fillStyle="yellow";
-    houseDraw.fill();
-    houseDraw.closePath();
-
   } else {
     alert("One of the colors that you inputted is not supported for this drawing!");
   }
 }
-  
-
