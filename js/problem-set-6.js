@@ -307,10 +307,6 @@ function drawStar() {
       
         ctx.lineTo(insidex[j], insidey[j]);
         ctx.lineTo(outsidex[j+1], outsidey[j+1]);
-        
-    
-    
-         
         ctx.lineTo(outsidex[0], outsidey[0]);
         ctx.stroke();
         ctx.closePath();
@@ -338,9 +334,33 @@ function drawStar() {
  */
 
 function drawStopSign() {
+ let stopSign = document.getElementById("canvas7").getContext("2d");
+  stopSign.clearRect(0, 0, canvas7.height, canvas7.width)
+ 
+  let stoplength = 80;
+  let c = Number((80/Math.sqrt(2)).toFixed(0));
+  let signX = 70;
+  let signY = 10;
 
+  stopSign.beginPath();
+  stopSign.moveTo(signX,signY);
+  stopSign.lineTo(signX+stoplength,signY);
+  stopSign.lineTo(signX+stoplength+c,signY+c);
+  stopSign.lineTo(signX+stoplength+c,signY+stoplength+c);
+  stopSign.lineTo(signX+stoplength,signY+stoplength+c+c);
+  stopSign.lineTo(signX,signY+stoplength+c+c);
+  stopSign.lineTo(signX-c,signY+stoplength+c);
+  stopSign.lineTo(signX-c,signY+c);
+  stopSign.lineTo(signX,signY);
+  stopSign.fillStyle="red";
+  stopSign.fill();
+  stopSign.closePath();
+  stopSign.fillStyle="white";
+  stopSign.font="70px sans-serif";
+  stopSign.fillText("STOP", 30, 145);
 }
 
+    
 /*
  * Pyramid. 7 points.
  *
@@ -361,8 +381,29 @@ function drawStopSign() {
 
 function drawPyramid() {
 
-
+  let canvas = document.getElementById('canvas8');
+  let ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+  let sideLength=Number(prompt("enter a side length"));
+  let pyramidx=10;
+  let pyramidy=canvas.height-10;
+  let i=0;
+  
+  lineNumber=1;
+  while(i<5){
+    for(let j=0+lineNumber;j<=5;j++){
+      ctx.strokeRect(pyramidx,pyramidy-sideLength,sideLength,sideLength);
+      pyramidx+=sideLength;
+    }
+    pyramidx=10+(sideLength/2)*lineNumber;
+    pyramidy-=sideLength;
+    lineNumber++;
+    i++;
+  }
 }
+}
+
 
 /*
  * House. 7 points.
@@ -395,4 +436,4 @@ function drawPyramid() {
 
 function drawHouse() {
 
-}
+
