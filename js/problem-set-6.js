@@ -436,4 +436,72 @@ function drawPyramid() {
 
 function drawHouse() {
 
+   let houseDraw = document.getElementById("canvas9").getContext("2d");
+    houseDraw.clearRect(0,0,canvas9.width, canvas9.height);
+  
+  let mainColor = prompt("Please input a color for your house:");
+  let doorColor = prompt("Please input a color for the door of your house:");
+  
+    if ((mainColor == "blue" || mainColor == "brown"|| mainColor == "green" || mainColor == "orange" || mainColor == "purple" || mainColor == "red" || mainColor == "yellow") && (doorColor == "blue" || doorColor == "brown"|| doorColor == "green" || doorColor == "orange" || doorColor == "purple" || doorColor == "red" || doorColor == "yellow")){
+
+    //This is for the main part of the house
+    houseDraw.fillStyle="black";
+    houseDraw.fillRect(150,301,726,452);
+    houseDraw.fillStyle=mainColor;
+    houseDraw.fillRect(151,302,724,450);
+    houseDraw.fill();
+
+    //This is for the rooftop
+    houseDraw.beginPath();
+    houseDraw.moveTo(150,300);
+    houseDraw.lineTo(510,10);
+    houseDraw.lineTo(860,300);
+    houseDraw.lineTo(150,300);
+    houseDraw.fillStyle="black";
+    houseDraw.fill();
+    houseDraw.closePath();
+    houseDraw.beginPath();
+    houseDraw.moveTo(150,300);
+    houseDraw.lineTo(510,12);
+    houseDraw.lineTo(870,300);
+    houseDraw.lineTo(150,300);
+    houseDraw.fillStyle="gray";
+    houseDraw.fill();
+    houseDraw.closePath();
+
+    //This is for the windows of the house 
+    houseDraw.fillStyle="black";
+    houseDraw.fillRect(260,620,80,80);
+    houseDraw.fillRect(260,400,80,80);
+    houseDraw.fillRect(684,620,80,80);
+    houseDraw.fillRect(684,400,80,80);
+    houseDraw.fillStyle="lightblue";
+    houseDraw.fillRect(261,620,80,80);
+    houseDraw.fillRect(261,400,80,80);
+    houseDraw.fillRect(685,620,80,80);
+    houseDraw.fillRect(685,400,80,80);
+
+     //This is for the door of the house
+    houseDraw.fillStyle="black"
+    houseDraw.fillRect(462,590,100,160);
+    houseDraw.fillStyle=doorColor;
+    houseDraw.fillRect(462,590,100,160);
+
+    //This is for the doorknob of the house
+    houseDraw.beginPath();
+    houseDraw.arc(545,670,8,0,Math.PI*2,true);
+    houseDraw.fillStyle="black";
+    houseDraw.fill();
+    houseDraw.closePath();
+    houseDraw.beginPath();
+    houseDraw.arc(545,670,7,0,Math.PI*2,true);
+    houseDraw.fillStyle="yellow";
+    houseDraw.fill();
+    houseDraw.closePath();
+
+  } else {
+    alert("One of the colors that you inputted is not supported for this drawing!");
+  }
+}
+  
 
